@@ -1,0 +1,15 @@
+{
+    "name": "samsung/mvc-framework-gh",
+    "authors": [
+        {
+            "name": "wiktorstacel",
+            "email": "stawik964@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
