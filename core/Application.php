@@ -33,4 +33,33 @@ class Application
     {
         echo $this->router->resolve();
     }
+
+    //POPRAWIONY PRAWDZIWY SINGLETON
+    /*class Application 
+    {
+        private static ?Application $instance = null; // Przechowuje jedyną instancję
+        public Router $router;
+        public static Application $app; 
+
+        private function __construct($rootPath) // Konstruktor jest prywatny!
+        {
+            self::$app = $this;
+            $this->router = new Router();
+        }
+
+        public static function getInstance($rootPath): Application
+        {
+            if (self::$instance === null) {
+                self::$instance = new self($rootPath);
+            }
+            return self::$instance;
+        }
+    }*/
+
+    /*SPRAWDZENIE DZIAŁANIA PRAWDZIWEGO SINGLETONA:
+    $app1 = Application::getInstance('/path');
+    $app2 = Application::getInstance('/another_path');
+
+    var_dump($app1 === $app2); // true - zawsze ta sama instancja!
+    */
 }
