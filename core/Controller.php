@@ -4,6 +4,12 @@ namespace app\core;
 
 class Controller
 {
+    public string $layout = 'main';
+    public function setLayout($layout)
+    {
+        $this->layout = $layout;
+    }
+
     public function render($view, $params = [])
     {
         //Application::$app działa jak globalna zmienna, więc nie ma znaczenia, 
